@@ -74,7 +74,7 @@
           <h1 class="title is-2 publication-title">CutScene: Active vision for Next Best View Planning in outdoor scenes.</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://adityaruniyar.com/">Aditya Rauniyar</a><sup>1</sup>,</span>
+              <a href="https://adityarauniyar.com/">Aditya Rauniyar</a><sup>1</sup>,</span>
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/omaralama/">Omar Alama</a><sup>1</sup>,</span>
               <span class="author-block">
@@ -92,7 +92,7 @@
 
           <div class="is-size-6 publication-authors">
             <span class="author-block">
-              <sup>1</sup>CMU</a>
+              <sup>1</sup><a href="https://adityarauniyar.com/">Carnegie Mellon University</a>
             </span>
           </div>
 
@@ -100,19 +100,19 @@
             <span class="author-block">* denotes equal contribution</span>
           </div> -->
 
-          <!-- <div class="column has-text-centered">
+          <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="assets/cutscene.pdf"
+                <a href="https://vcc.tech/UrbanScene3D"
                    class="external-link button is-normal ">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                      <i class="far fa-images"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>Dataset</span>
                 </a>
               </span>
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2308.00688"
                    class="external-link button is-normal ">
                   <span class="icon">
@@ -159,8 +159,8 @@
                       <i class="fa fa-face-smiling-hands"></i>
                   </span>
                   <span>HF Demo</span>
-                  </a>
-              </span> -->
+                  </a> -->
+              </span>
 
               <!-- Dataset Link. -->
               <!-- <span class="link-block">
@@ -207,27 +207,28 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            VPR is vital for robot
-            localization. To date, the most performant VPR approaches
-            are environment- and task-specific: while they exhibit strong
-            performance in structured environments (predominantly urban
-            driving), their performance degrades severely in unstructured
-            environments, rendering most approaches brittle to robust realworld deployment. In this work, we develop a universal solution
-            to VPR – a technique that works across a broad range of
-            structured and unstructured environments (urban, outdoors,
-            indoors, aerial, underwater, and subterranean environments)
-            without any re-training or finetuning. We demonstrate that
-            general-purpose feature representations derived from off-theshelf self-supervised models with no VPR-specific training are
-            the right substrate upon which to build such a universal VPR
-            solution. Combining these derived features with unsupervised
-            feature aggregation enables our suite of methods, cutscene,
-            to achieve up to 4× significantly higher performance than
-            existing approaches. We further obtain a 6% improvement
-            in performance by characterizing the semantic properties of
-            these features, uncovering unique domains which encapsulate
-            datasets from similar environments. Our detailed experiments
-            and analysis lay a foundation for building VPR solutions
-            that may be deployed anywhere, anytime, and across anyview.
+            In this project, we extend the exploration of autonomous robotic 
+            tasks in the context of larger outdoor scenes. Building upon the 
+            referenced work, we focus on planning views for these expansive 
+            environments, addressing questions related to optimal data collection 
+            given a set of reference images. A significant contribution of our 
+            approach lies in the introduction of a cutscene augmentation method. 
+            This innovative technique involves semantically dividing larger 
+            outdoor scenes into smaller components. Our model is then trained 
+            to predict uncertainty and RGB values for novel poses within these 
+            segmented scenes. This cutscene augmentation method serves a dual 
+            purpose. First, it effectively reduces the size of the dataset by 
+            a significant percentage, enhancing the efficiency of the training 
+            process. Second, and more importantly, it substantially increases 
+            the accuracy of novel view predictions. By leveraging this method, 
+            our project aims to overcome challenges associated with data 
+            collection in large-scale outdoor scenarios, providing a valuable 
+            contribution to the broader field of autonomous robotic tasks. 
+            Our experiments, using both synthetic and real-world data, 
+            demonstrate the effectiveness of our proposed uncertainty-guided 
+            approach. The results showcase improved accuracy in scene representations 
+            compared to baseline methods, validating the utility and generalizability 
+            of our methodology.
           </p>
         </div>
       </div>
@@ -254,13 +255,13 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">cutscene Performance</h2>
+        <h2 class="title is-3">Cutscene Performance</h2>
         <p></p>
       </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
-      <img id="cutscene Performance" src = "data/method_viz/performance_radar_cropped.gif" width="500">
+      <img id="cutscene Performance" src = "data/method_viz/cutscene.gif" width="500">
     <div class="columns is-centered has-text-centered">
 
   </div>
@@ -271,7 +272,7 @@
   <!-- Paper video. -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-three-fifths">
-      <h2 class="title is-3">Video</h2>
+      <h2 class="title is-3">How to Cutscene</h2>
       <div class="publication-video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/ITo8rMInatk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div>
     </div>
