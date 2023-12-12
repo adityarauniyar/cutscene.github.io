@@ -25,17 +25,17 @@ let colors;
 
 async function load_arr()
 {
-    let xarray_file = await fetch('https://anyloc.github.io/data/trajectory_data/x.json');
-    let yarray_file = await fetch('https://anyloc.github.io/data/trajectory_data/y.json');
-    let retr_file = await fetch('https://anyloc.github.io/data/trajectory_data/retrievals.json');
+    let xarray_file = await fetch('https://cutscene.github.io/data/trajectory_data/x.json');
+    let yarray_file = await fetch('https://cutscene.github.io/data/trajectory_data/y.json');
+    let retr_file = await fetch('https://cutscene.github.io/data/trajectory_data/retrievals.json');
 
     let xArray_json = await xarray_file.json();
     let yArray_json = await yarray_file.json();
     let retr_json = await retr_file.json();
 
-    let xarray_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_x_new.json');
-    let yarray_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_y_new.json');
-    let retr_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/retrievals_VPAIR.json');
+    let xarray_2_file = await fetch('https://cutscene.github.io/data/trajectory_data/VPAIR_x_new.json');
+    let yarray_2_file = await fetch('https://cutscene.github.io/data/trajectory_data/VPAIR_y_new.json');
+    let retr_2_file = await fetch('https://cutscene.github.io/data/trajectory_data/retrievals_VPAIR.json');
 
     let xArray_2_json = await xarray_2_file.json();
     let yArray_2_json = await yarray_2_file.json();
@@ -83,7 +83,7 @@ async function setSimilarityPlot(chosen_index)
           },        
         images: [
             {
-                "source": "https://anyloc.github.io/data/VPAir_images/VPAIR_Image.png",
+                "source": "https://cutscene.github.io/data/VPAir_images/VPAIR_Image.png",
                 "xref": "x",
                 "yref": "y",
                 "x": 0,
@@ -168,7 +168,7 @@ async function setTrajectoryPlot(chosen_index)
           },        
         images: [
             {
-                "source": "https://anyloc.github.io/data/VPAir_images/VPAIR_Image.png",
+                "source": "https://cutscene.github.io/data/VPAir_images/VPAIR_Image.png",
                 "xref": "x",
                 "yref": "y",
                 "x": 0,
