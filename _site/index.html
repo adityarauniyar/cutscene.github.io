@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel = "icon" href = "assets/title_image.png" type = "image/x-icon">
+        
+  <meta charset="utf-8">
+  <meta name="description"
+        content="cutscene: Towards Universal Visual Place Recognition ">
+  <meta name="keywords" content="cutscene,FoundVLAD, Foundation Models, Visual Place Recognition, VPR, DINOv2, DINO, SAM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="assets/Thumbnail.png" />        
+  <title>cutscene: Towards Universal Visual Place Recognition </title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://cutscene.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title"><a href="https://visual-learning.cs.cmu.edu/">16824</a> Course Project: <br>
+             Active vision for Next Best View Planning in outdoor scenes.</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://adityarauniyar.com/">Aditya Rauniyar</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/omaralama/">Omar Alama</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://yuechuanhou.com//">Yuechuan Hou</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/mukul-ganwal/">Mukul Ganwal</a><sup>1</sup>,</span> 
+                <br>
+              <!-- <span class="author-block">
+              <a href="https://theairlab.org/">Sebastian Scherer</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://robotics.iiit.ac.in/">Madhava Krishna</a><sup>2</sup>,</span>  
+              <span class="author-block">
+              <a href="https://scholar.google.co.in/citations?user=oVS3HHIAAAAJ&hl=en">Sourav Garg</a><sup>4</sup></span> -->
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">
+              <sup>1</sup><a href="https://adityarauniyar.com/">Carnegie Mellon University</a>
+            </span>
+          </div>
+
+          <!-- <div class="is-size-7 publication-authors">
+            <span class="author-block">* denotes equal contribution</span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://vcc.tech/UrbanScene3D"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2308.00688"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=ITo8rMInatk&feature=youtu.be"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/cutscene/cutscene"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#interactive_demo"
+                   class="external-link button is-normal">
+                  <span class="icon">
+                      <i class="fa fa-basketball-ball"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span>
+              <!-- Hugging Face Demo Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/TheProjectsGuy/cutscene"
+                   class="external-link button is-normal">
+                  <span class="icon">
+                      <i class="fa fa-face-smiling-hands"></i>
+                  </span>
+                  <span>HF Demo</span>
+                  </a> 
+              </span> -->
+
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal" disabled="true">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div> -->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
+        <!-- <img source src="./data/method_viz/Splash GIF.gif" /> -->
+        <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+          <source src="./data/method_viz/splash_vid_compressed.mp4"
+                  type="video/mp4">
+        </video>
+      <!-- </video> -->
+      <h2 class="subtitle has-text-centered">
+        <span class="coolname">cutscene</span> enables <span>universal visual place recognition (VPR) <i>anywhere</i>, <i>anytime</i> and under <i>anyview</i>.</span> 
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this project, we extend the exploration of autonomous robotic 
+            tasks in the context of larger outdoor scenes. Building upon the 
+            referenced work, we focus on planning views for these expansive 
+            environments, addressing questions related to optimal data collection 
+            given a set of reference images. A significant contribution of our 
+            approach lies in the introduction of a cutscene augmentation method. 
+            This innovative technique involves semantically dividing larger 
+            outdoor scenes into smaller components. Our model is then trained 
+            to predict uncertainty and RGB values for novel poses within these 
+            segmented scenes. This cutscene augmentation method serves a dual 
+            purpose. First, it effectively reduces the size of the dataset by 
+            a significant percentage, enhancing the efficiency of the training 
+            process. Second, and more importantly, it substantially increases 
+            the accuracy of novel view predictions. By leveraging this method, 
+            our project aims to overcome challenges associated with data 
+            collection in large-scale outdoor scenarios, providing a valuable 
+            contribution to the broader field of autonomous robotic tasks. 
+            Our experiments, using both synthetic and real-world data, 
+            demonstrate the effectiveness of our proposed uncertainty-guided 
+            approach. The results showcase improved accuracy in scene representations 
+            compared to baseline methods, validating the utility and generalizability 
+            of our methodology.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <a id="overview_video"></a>
+          <iframe
+            src="./data/">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    <!--/ Paper video. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Cutscene Performance</h2>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <img id="cutscene Performance" src = "data/method_viz/cutscene.gif" width="500">
+    <div class="columns is-centered has-text-centered">
+
+  </div>
+</section>
+
+<section class="hero is-light">
+  <div class="hero-body">
+  <!-- Paper video. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-three-fifths">
+      <h2 class="title is-3">How to Cutscene</h2>
+      <div class="publication-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ITo8rMInatk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div>
+    </div>
+  </div>
+  </div>
+  <!--Paper video-->
+
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <a id="interactive_demo"></a>
+        <h2 class="title is-3">Try out Universal VPR in action!</h2>
+        <div class="content has-text-justified">
+        <p> 
+          Simply click on any point on the query trajectory (upper left), and observe its best retrieval and similarity heatmap on the database trajectory (upper right). 
+          Use the drop-down menu to switch to a different environment. 
+          The corresponding query and the best retrieval image is visualized at the lower left and lower right respectively.
+          Points that are identified by &#11088 on the database trajectory indicate the best retrieval. 
+          Yellow indicates higher similarity in the database trajectory (upper right).
+        </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="control-row">
+        <select class="trajectorydata">
+        </select>
+      </div>
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <div id="myPlot"></div>
+        </div>
+      </div>    
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <div id="sim_myPlot"></div>
+        </div>
+        
+      </div>
+  
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Query Image</h2>
+        <img id="q_image" src = "data/VPAir_images/subsampled_vpair/queries/00001.png" width="500">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Retrieved Image</h2>
+          <img id="db_image" src = "data/VPAir_images/subsampled_vpair/reference_views/00001.png" width="500">
+        </div>
+      </div>
+
+      <script src = "data/trajectory_data/hawkins.js"></script>
+      <script src = "demo/plot.js"></script>
+  
+    </div>
+
+    <p></p>
+    </div>
+</section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <h2 class="title is-3">Qualitative Retrieval Visualizations</h2>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+  <div class="columns is-centered">
+
+  <div class="column has-text-centered">
+    <div class="content">
+      <h2 class="title is-4">VPAir</h2>
+      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+        <source src="./data/trajectory_videos/vpair_test.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    </div>
+  </div>
+
+  <div class="column has-text-centered">
+    <div class="content">
+      <h2 class="title is-4">Hawkins</h2>
+      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+        <source src="./data/trajectory_videos/map_sim_1.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    </div>
+  </div>
+
+  <div class="column has-text-centered">
+    <div class="content">
+      <h2 class="title is-4">Laurel Caverns</h2>
+      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+        <source src="./data/trajectory_videos/laurel_map_sim.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    </div>
+  </div>
+  </div>
+
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Vocabulary Visualizations on Gardens Point</h2>
+        <p></p>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Database Sample</h2>
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+            <source src="./data/viz_videos/row1_col1.webm"
+                    type="video/mp4">
+          </video>
+          <!-- <img src = "data/viz_gifs/row1_col1.gif"> -->
+        </div>
+      </div>
+      
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Query Sample</h2>
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+            <source src="./data/viz_videos/row1_col2.webm"
+                    type="video/mp4">
+          </video>
+          <!-- <img src = "data/viz_gifs/row1_col2.gif"> -->
+        </div>
+      </div>
+
+    </div>
+
+    <p></p>
+    </div>
+
+</section>
+<section class="hero hero is-light is-small">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Vocabulary Visualizations comparing DINO & DINOv2</h2>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+            
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">DINO ViT-S L9 Key</h2>
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+            <source src="./data/viz_videos/row2_col1.webm"
+                    type="video/mp4">
+          </video>
+          <!-- <img src = "data/viz_gifs/row2_col1.gif"> -->
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">DINOv2 ViT-S L10 Value</h2>
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+            <source src="./data/viz_videos/row2_col2.webm"
+                    type="video/mp4">
+          </video>
+          <!-- <img src = "data/viz_gifs/row2_col2.gif"> -->
+        </div>
+      </div>
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Vocabulary Visualizations across DINO & DINOv2 layers</h2>
+        <p></p>
+      </div>
+    </div>
+  
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">DINO ViT-S Key</h2>
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+            <source src="./data/viz_videos/row3_col1.webm"
+                    type="video/mp4">
+          </video>
+          <!-- <img src = "data/viz_gifs/row3_col1.gif"> -->
+        </div>
+      </div>
+      
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">DINOv2 ViT-S Value</h2>
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+            <source src="./data/viz_videos/row3_col2.webm"
+                    type="video/mp4">
+          </video>
+          <!-- <img src = "data/viz_gifs/row3_col2.gif"> -->
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">DINOv2 ViT-G Value</h2>
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
+            <source src="./data/viz_videos/row3_col3.webm"
+                    type="video/mp4">
+          </video>
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $(function() {
+  var screenWidth = $(window).width();
+  if (screenWidth >= 800) {
+    $('#gpt-video-1').attr('autoplay', 'autoplay');
+  }
+  if (screenWidth >= 800) {
+    $('#gpt-video-2').attr('autoplay', 'autoplay');
+  }
+  if (screenWidth >= 800) {
+    $('#click-query-icl').attr('autoplay', 'autoplay');
+  }
+});
+</script>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>
+      @article{keetha2023cutscene,
+        title={cutscene: Towards Universal Visual Place Recognition},
+        author={Keetha, Nikhil and Mishra, Avneesh and Karhade, Jay and Jatavallabhula, Krishna Murthy and Scherer, Sebastian and Krishna, Madhava and Garg, Sourav},
+        journal={arXiv preprint arXiv:2308.00688},
+        year={2023}
+      }
+    </code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website adapted from the Nerfies templates, which is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            If you use the <a href="https://github.com/cutscene/cutscene.github.io">source code</a> of this website,
+            please also link back to the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies source code</a> in your footer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
