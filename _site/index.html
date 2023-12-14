@@ -75,13 +75,13 @@
              Active vision for Next Best View Planning in outdoor scenes.</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://adityarauniyar.com/">Aditya Rauniyar</a><sup>1</sup>,</span>
+              <a href="https://adityarauniyar.com/">Aditya Rauniyar</a>,</span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/omaralama/">Omar Alama</a><sup>1</sup>,</span>
+                <a href="https://www.linkedin.com/in/omaralama/">Omar Alama</a>,</span>
               <span class="author-block">
-                <a href="https://yuechuanhou.com//">Yuechuan Hou</a><sup>1</sup>,</span>
+                <a href="https://yuechuanhou.com//">Yuechuan Hou</a>,</span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/mukul-ganwal/">Mukul Ganwal</a><sup>1</sup>,</span> 
+                <a href="https://www.linkedin.com/in/mukul-ganwal/">Mukul Ganwal</a>,</span> 
                 <br>
               <!-- <span class="author-block">
               <a href="https://theairlab.org/">Sebastian Scherer</a><sup>1</sup>,</span>
@@ -93,9 +93,9 @@
 
           <div class="is-size-6 publication-authors">
             <span class="author-block">
-              <sup>1</sup><a href="https://www.cmu.edu/">Carnegie Mellon University</a>
+              <a href="https://www.cmu.edu/" style="color: rgb(179, 8, 8);">Carnegie Mellon University</a>
             </span>
-          </div>
+          </div>          
 
           <!-- <div class="is-size-7 publication-authors">
             <span class="author-block">* denotes equal contribution</span>
@@ -120,22 +120,22 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
+<!-- <section class="hero teaser"> -->
+  <!-- <div class="container is-max-desktop"> -->
+    <!-- <div class="hero-body"> -->
       <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
         <!-- <img source src="./data/method_viz/Splash GIF.gif" /> -->
-        <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-          <source src="./data/method_viz/splash_vid_compressed.mp4"
-                  type="video/mp4">
-        </video>
+        <!-- <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%"> -->
+          <!-- <source src="./data/method_viz/splash_vid_compressed.mp4" -->
+                  <!-- type="video/mp4"> -->
+        <!-- </video> -->
       <!-- </video> -->
-      <h2 class="subtitle has-text-centered">
-        <span class="coolname">cutscene</span> enables <span>universal visual place recognition (VPR) <i>anywhere</i>, <i>anytime</i> and under <i>anyview</i>.</span> 
-      </h2>
-    </div>
-  </div>
-</section>
+      <!-- <h2 class="subtitle has-text-centered"> -->
+        <!-- <span class="coolname">cutscene</span> enables <span>universal visual place recognition (VPR) <i>anywhere</i>, <i>anytime</i> and under <i>anyview</i>.</span>  -->
+      <!-- </h2> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </section> -->
 
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -194,13 +194,65 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
+        <a id="interactive_demo"></a>
+        <h2 class="title is-3">Introduction and Related work</h2>
+        <div class="content has-text-justified">
+        <p> 
+          Embodied robotic intelligence relies on active perception 
+          and exploration, essential for various applications like 
+          robotic manipulation, inspection, and vision-based navigation. 
+          The autonomous collection of data plays a pivotal role in 
+          scene understanding and subsequent tasks [1]. However, a 
+          significant challenge lies in efficiently planning a sequence 
+          of views for sensors, ensuring the acquisition of the most 
+          valuable information while adhering to platform-specific 
+          constraints [2]. Addressing this challenge is crucial for 
+          enhancing the training process, particularly in scenarios 
+          involving larger scenes.
+        </p>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Multi-UAV Data Gathering</h2>
+        <img id="q_image" src = "data/related_work/multi_uav_data_gathering.gif" width="500">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Scene Understanding for Manipulation</h2>
+          <img id="db_image" src = "data/VPAir_images/subsampled_vpair/reference_views/00001.png" width="500">
+        </div>
+      </div>
+
+      <script src = "data/trajectory_data/hawkins.js"></script>
+      <script src = "demo/plot.js"></script>
+  
+    </div>
+
+    <p></p>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
         <h2 class="title is-3">Semantic Cutscene Augmentation</h2>
         <p></p>
       </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
-      <img id="cutscene Performance" src = "data/method_viz/cutscene.gif" width="500">
+      <img id="cutscene Performance" src = "data/method_viz/how_to_cutscene.gif" width="500">
     <div class="columns is-centered has-text-centered">
 
   </div>

@@ -75,13 +75,13 @@
              Active vision for Next Best View Planning in outdoor scenes.</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://adityarauniyar.com/">Aditya Rauniyar</a><sup>1</sup>,</span>
+              <a href="https://adityarauniyar.com/">Aditya Rauniyar</a>,</span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/omaralama/">Omar Alama</a><sup>1</sup>,</span>
+                <a href="https://www.linkedin.com/in/omaralama/">Omar Alama</a>,</span>
               <span class="author-block">
-                <a href="https://yuechuanhou.com//">Yuechuan Hou</a><sup>1</sup>,</span>
+                <a href="https://yuechuanhou.com//">Yuechuan Hou</a>,</span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/mukul-ganwal/">Mukul Ganwal</a><sup>1</sup>,</span> 
+                <a href="https://www.linkedin.com/in/mukul-ganwal/">Mukul Ganwal</a>,</span> 
                 <br>
               <!-- <span class="author-block">
               <a href="https://theairlab.org/">Sebastian Scherer</a><sup>1</sup>,</span>
@@ -93,9 +93,9 @@
 
           <div class="is-size-6 publication-authors">
             <span class="author-block">
-              <sup>1</sup><a href="https://www.cmu.edu/">Carnegie Mellon University</a>
+              <a href="https://www.cmu.edu/" style="color: rgb(179, 8, 8);">Carnegie Mellon University</a>
             </span>
-          </div>
+          </div>          
 
           <!-- <div class="is-size-7 publication-authors">
             <span class="author-block">* denotes equal contribution</span>
@@ -120,22 +120,22 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
+<!-- <section class="hero teaser"> -->
+  <!-- <div class="container is-max-desktop"> -->
+    <!-- <div class="hero-body"> -->
       <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
         <!-- <img source src="./data/method_viz/Splash GIF.gif" /> -->
-        <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-          <source src="./data/method_viz/splash_vid_compressed.mp4"
-                  type="video/mp4">
-        </video>
+        <!-- <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%"> -->
+          <!-- <source src="./data/method_viz/splash_vid_compressed.mp4" -->
+                  <!-- type="video/mp4"> -->
+        <!-- </video> -->
       <!-- </video> -->
-      <h2 class="subtitle has-text-centered">
-        <span class="coolname">cutscene</span> enables <span>universal visual place recognition (VPR) <i>anywhere</i>, <i>anytime</i> and under <i>anyview</i>.</span> 
-      </h2>
-    </div>
-  </div>
-</section>
+      <!-- <h2 class="subtitle has-text-centered"> -->
+        <!-- <span class="coolname">cutscene</span> enables <span>universal visual place recognition (VPR) <i>anywhere</i>, <i>anytime</i> and under <i>anyview</i>.</span>  -->
+      <!-- </h2> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </section> -->
 
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -194,90 +194,40 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Semantic Cutscene Augmentation</h2>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <img id="cutscene Performance" src = "data/method_viz/cutscene.gif" width="500">
-    <div class="columns is-centered has-text-centered">
-
-  </div>
-</section>
-
-<section class="hero is-light">
-  <div class="hero-body">
-  <!-- Paper video. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-three-fifths">
-      <h2 class="title is-3">How to Cutscene</h2>
-      <div class="publication-video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ITo8rMInatk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div>
-    </div>
-  </div>
-  </div>
-  <!--Paper video-->
-
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
         <a id="interactive_demo"></a>
-        <h2 class="title is-3">Try out Universal VPR in action!</h2>
+        <h2 class="title is-3">Introduction and Related work</h2>
         <div class="content has-text-justified">
         <p> 
-          Simply click on any point on the query trajectory (upper left), and observe its best retrieval and similarity heatmap on the database trajectory (upper right). 
-          Use the drop-down menu to switch to a different environment. 
-          The corresponding query and the best retrieval image is visualized at the lower left and lower right respectively.
-          Points that are identified by &#11088 on the database trajectory indicate the best retrieval. 
-          Yellow indicates higher similarity in the database trajectory (upper right).
+          Embodied robotic intelligence relies on active perception 
+          and exploration, essential for various applications like 
+          robotic manipulation, inspection, and vision-based navigation. 
+          The autonomous collection of data plays a pivotal role in 
+          scene understanding and subsequent tasks [1]. However, a 
+          significant challenge lies in efficiently planning a sequence 
+          of views for sensors, ensuring the acquisition of the most 
+          valuable information while adhering to platform-specific 
+          constraints [2]. Addressing this challenge is crucial for 
+          enhancing the training process, particularly in scenarios 
+          involving larger scenes.
         </p>
         </div>
       </div>
     </div>
 
-    <div class="columns is-centered">
-
-      <div class="control-row">
-        <select class="trajectorydata">
-        </select>
-      </div>
-
-    </div>
+    
 
     <div class="columns is-centered">
 
       <div class="column has-text-centered">
         <div class="content">
-          <div id="myPlot"></div>
-        </div>
-      </div>    
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <div id="sim_myPlot"></div>
-        </div>
-        
-      </div>
-  
-    </div>
-
-    <div class="columns is-centered">
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Query Image</h2>
-        <img id="q_image" src = "data/VPAir_images/subsampled_vpair/queries/00001.png" width="500">
+          <h2 class="title is-4">Multi-UAV Data Gathering</h2>
+        <img id="q_image" src = "data/related_work/multi_uav_data_gathering.gif" width="500">
         </div>
       </div>
 
       <div class="column has-text-centered">
         <div class="content">
-          <h2 class="title is-4">Retrieved Image</h2>
+          <h2 class="title is-4">Scene Understanding for Manipulation</h2>
           <img id="db_image" src = "data/VPAir_images/subsampled_vpair/reference_views/00001.png" width="500">
         </div>
       </div>
@@ -291,214 +241,23 @@
     </div>
 </section>
 
-<section class="hero is-small is-light">
-  <div class="hero-body">
-  <div class="columns is-centered has-text-centered">
-    <div class="column">
-      <h2 class="title is-3">Qualitative Retrieval Visualizations</h2>
-      <p></p>
-    </div>
-  </div>
-
-  <div class="container is-max-desktop">
-  <div class="columns is-centered">
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">VPAir</h2>
-      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-        <source src="./data/trajectory_videos/vpair_test.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Hawkins</h2>
-      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-        <source src="./data/trajectory_videos/map_sim_1.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Laurel Caverns</h2>
-      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-        <source src="./data/trajectory_videos/laurel_map_sim.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-  </div>
-
-  </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Vocabulary Visualizations on Gardens Point</h2>
+        <h2 class="title is-3">Semantic Cutscene Augmentation</h2>
         <p></p>
       </div>
     </div>
-    
-    <div class="columns is-centered">
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Database Sample</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row1_col1.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row1_col1.gif"> -->
-        </div>
-      </div>
-      
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Query Sample</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row1_col2.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row1_col2.gif"> -->
-        </div>
-      </div>
-
-    </div>
-
-    <p></p>
-    </div>
-
-</section>
-<section class="hero hero is-light is-small">
-  <div class="hero-body">
-  <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Vocabulary Visualizations comparing DINO & DINOv2</h2>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-            
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINO ViT-S L9 Key</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row2_col1.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row2_col1.gif"> -->
-        </div>
-      </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINOv2 ViT-S L10 Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row2_col2.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row2_col2.gif"> -->
-        </div>
-      </div>
-
-      </div>
-    </div>
-    <p></p>
-  </div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-  <div class="container is-max-desktop">
-
+      <img id="cutscene Performance" src = "data/method_viz/how_to_cutscene.gif" width="500">
     <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Vocabulary Visualizations across DINO & DINOv2 layers</h2>
-        <p></p>
-      </div>
-    </div>
-  
-    <div class="columns is-centered">
 
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINO ViT-S Key</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row3_col1.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row3_col1.gif"> -->
-        </div>
-      </div>
-      
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINOv2 ViT-S Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row3_col2.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row3_col2.gif"> -->
-        </div>
-      </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINOv2 ViT-G Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row3_col3.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-        </div>
-      </div>
-    </div>
-  </div>
   </div>
 </section>
 
-<script type="text/javascript">
-  $(function() {
-  var screenWidth = $(window).width();
-  if (screenWidth >= 800) {
-    $('#gpt-video-1').attr('autoplay', 'autoplay');
-  }
-  if (screenWidth >= 800) {
-    $('#gpt-video-2').attr('autoplay', 'autoplay');
-  }
-  if (screenWidth >= 800) {
-    $('#click-query-icl').attr('autoplay', 'autoplay');
-  }
-});
-</script>
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-3">BibTeX</h2>
-    <pre><code>
-      @article{keetha2023cutscene,
-        title={cutscene: Towards Universal Visual Place Recognition},
-        author={Keetha, Nikhil and Mishra, Avneesh and Karhade, Jay and Jatavallabhula, Krishna Murthy and Scherer, Sebastian and Krishna, Madhava and Garg, Sourav},
-        journal={arXiv preprint arXiv:2308.00688},
-        year={2023}
-      }
-    </code></pre>
-  </div>
-</section>
 
 <footer class="footer">
   <div class="container">
