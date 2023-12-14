@@ -5,11 +5,11 @@
         
   <meta charset="utf-8">
   <meta name="description"
-        content="cutscene: Towards Universal Visual Place Recognition ">
+        content="Cutscene: Active vision for Next Best View Planning in outdoor scenes ">
   <meta name="keywords" content="cutscene,FoundVLAD, Foundation Models, Visual Place Recognition, VPR, DINOv2, DINO, SAM">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="assets/Thumbnail.png" />        
-  <title>cutscene: Towards Universal Visual Place Recognition </title>
+  <title>Cutscene: Active vision for Next Best View Planning in outdoor scenes </title>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -460,7 +460,203 @@
     </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <a id="interactive_demo"></a>
+        <h2 class="title is-3">Experimental Setup</h2>
+        
+      </div>
+    </div>
+
+    
+
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <div class="NeRF-video">
+            <img id="db_image" src = "data/1_1_placeholder.png" width="500">          </div>
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <div class="content has-text-justified">
+            <p> 
+              (WIP) Describes the experimental setup of the model training 
+              and planning of views using the model
+            </p>
+            </div>
+        </div>
+      </div>
+
+      <script src = "data/trajectory_data/hawkins.js"></script>
+      <script src = "demo/plot.js"></script>
+  
+    </div>
+
+    <p></p>
+    </div>
+</section>
+
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <h2 class="title is-3">Results</h2>
+      <p>
+        Qualitative results on RGB and uncertainity prediction
+
+      </p>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+
+    <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Reference Images </h2>
+          <img id="db_image" src = "data/16_9_placeholder.png" width="500">
+
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Ground Truth </h2>
+          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">90deg </h2>
+          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">60deg </h2>
+          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">30deg</h2>
+          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">60deg CA</h2>
+          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br><br><br><br>
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <h2 class="title is-3">Planning Results</h2>
+      <p>
+        Quantitative results on View Planning
+
+      </p>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+
+    <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">PSNR </h2>
+          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">SSIM </h2>
+          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+
+  </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Conclusion and Future Work</h2>
+        <p></p>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <div class="content">
+          <p>
+            (WIP) Concludes the project work and introduces future work.
+          </p>
+        </div>
+      </div>
+      
+      <div class="column has-text-centered">
+        <div class="content">
+          
+        </div>
+      </div>
+
+    </div>
+
+    <p></p>
+    </div>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>
+      @article{2023cutscene,
+        title={Cutscene: Active vision for Next Best View Planning in outdoor scenes},
+        author={Rauniyar, Aditya and Alama, Omar and Hou, Yuechuan and Ganwal, Mukul},
+        year={2023}
+      }
+    </code></pre>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
