@@ -243,67 +243,67 @@
     </div>
 </section>
 
+
 <section class="hero is-small is-light">
   <div class="hero-body">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <a id="interactive_demo"></a>
+      <div class="column is-four-fifths">
         <h2 class="title is-3">Contributions</h2>
         <div class="content has-text-justified">
-        <p> 
-          In our research, we explored 3D scene understanding, 
-          focusing on larger outdoor environments represented by 
-          UrbanScene3D. We integrated this environment into Blender, 
-          generating datasets emulating camera poses and renders 
-          akin to the DTU dataset. Our sensitivity analysis 
-          involved various viewing angles, creating datasets 
-          with different parameters, including a double dome 
-          configuration and maximum view angle changes aligned with 
-          specified view ranges of 30, 60, and 90 degrees. Additionally, 
-          we introduced cutscene augmentation, which divides larger 
-          scenes into smaller, manageable sections, enhancing scene 
-          analysis efficiency and facilitating a deeper understanding
-          of complex environments.
-        </p>
+          <p>
+            In our research, we explored 3D scene understanding, 
+            focusing on larger outdoor environments represented by 
+            UrbanScene3D. We integrated this environment into Blender, 
+            generating datasets emulating camera poses and renders 
+            akin to the DTU dataset. Our sensitivity analysis 
+            involved various viewing angles, creating datasets 
+            with different parameters, including a double dome 
+            configuration and maximum view angle changes aligned with 
+            specified view ranges of 30, 60, and 90 degrees. Additionally, 
+            we introduced cutscene augmentation, which divides larger 
+            scenes into smaller, manageable sections, enhancing scene 
+            analysis efficiency and facilitating a deeper understanding
+            of complex environments.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">Training on larger outdoor scenes</h2>
+            <img id="db_image" src = "data/method_viz/View capture_180_renders.gif" width="500">
+            <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+            
+          </div>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">Viewing range sensitivity analysis</h2>
+            <img id="db_image" src = "data/method_viz/Selection_180_90_30.gif" width="500">
+            <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+            
+          </div>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">Cutscene Augmentation</h2>
+            <img id="db_image" src = "data/method_viz/cutscene.gif" width="500">
+            <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+            
+          </div>
         </div>
       </div>
     </div>
-
-  <div class="container is-max-desktop">
-  <div class="columns is-centered">
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Training on larger outdoor scenes</h2>
-      <img id="db_image" src = "data/method_viz/View capture_180_renders.gif" width="500">
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-      
     </div>
-  </div>
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Viewing range sensitivity analysis</h2>
-      <img id="db_image" src = "data/method_viz/Selection_180_90_30.gif" width="500">
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-      
-    </div>
-  </div>
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Cutscene Augmentation</h2>
-      <img id="db_image" src = "data/method_viz/cutscene.gif" width="500">
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-      
-    </div>
-  </div>
-
-  
-  </div>
-
-  </div>
-  </div>
 </section>
 
 <section class="section">
@@ -560,8 +560,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <div class="content has-text-justified">
-            <p> 
-              
+            <p>               
             In our experimental setup, we employed a state-of-the-art approach 
             for training our computer vision model. We utilized a high-performance 
             computing environment with a 3090Ti GPU to accelerate our training 
