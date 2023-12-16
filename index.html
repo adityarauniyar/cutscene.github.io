@@ -158,7 +158,7 @@
             segmented scenes. This cutscene augmentation method serves a dual 
             purpose. First, it effectively increases the size of the dataset by 
             a significant percentage, enhancing the efficiency of the training 
-            process, and not overfitting on a scene. Second, and more importantly, it substantially increases 
+            process, and reducing overfitting on a scene. Second, and more importantly, it substantially increases 
             the accuracy of novel view predictions. By leveraging this method, 
             our project aims to overcome challenges associated with data 
             collection in large-scale outdoor scenarios, providing a valuable 
@@ -198,7 +198,6 @@
         <h2 class="title is-3">Introduction and Related work</h2>
         <div class="content has-text-justified">
         <p> 
-          
         Embodied robotic intelligence relies on active perception and 
         exploration, essential for various applications like robotic 
         manipulation, inspection, and vision-based navigation. 
@@ -257,15 +256,14 @@
             focusing on larger outdoor environments represented by 
             UrbanScene3D. We integrated this environment into Blender, 
             generating datasets emulating camera poses and renders 
-            akin to the DTU dataset. Our sensitivity analysis 
-            involved various viewing angles, creating datasets 
+            akin to the DTU dataset. We conduct a viewing range sensitivity analysis 
+            which involved various viewing ranges, creating datasets 
             with different parameters, including a double dome 
             configuration and maximum view angle changes aligned with 
             specified view ranges of 30, 60, and 90 degrees. Additionally, 
-            we introduced cutscene augmentation, which divides larger 
-            scenes into smaller, manageable sections, enhancing scene 
-            analysis efficiency and facilitating a deeper understanding
-            of complex environments.
+            we introduced cutscene augmentation, which augments that dataset by
+            extracting more subscenes from each big scene, improving the utility
+            of small datasets and giving the network more room to learn.
           </p>
         </div>
       </div>
