@@ -158,7 +158,7 @@
             segmented scenes. This cutscene augmentation method serves a dual 
             purpose. First, it effectively increases the size of the dataset by 
             a significant percentage, enhancing the efficiency of the training 
-            process, and not overfitting on a scene. Second, and more importantly, it substantially increases 
+            process, and reducing overfitting on a scene. Second, and more importantly, it substantially increases 
             the accuracy of novel view predictions. By leveraging this method, 
             our project aims to overcome challenges associated with data 
             collection in large-scale outdoor scenarios, providing a valuable 
@@ -198,7 +198,6 @@
         <h2 class="title is-3">Introduction and Related work</h2>
         <div class="content has-text-justified">
         <p> 
-          
         Embodied robotic intelligence relies on active perception and 
         exploration, essential for various applications like robotic 
         manipulation, inspection, and vision-based navigation. 
@@ -257,15 +256,14 @@
             focusing on larger outdoor environments represented by 
             UrbanScene3D. We integrated this environment into Blender, 
             generating datasets emulating camera poses and renders 
-            akin to the DTU dataset. Our sensitivity analysis 
-            involved various viewing angles, creating datasets 
+            akin to the DTU dataset. We conduct a viewing range sensitivity analysis 
+            which involved various viewing ranges, creating datasets 
             with different parameters, including a double dome 
             configuration and maximum view angle changes aligned with 
             specified view ranges of 30, 60, and 90 degrees. Additionally, 
-            we introduced cutscene augmentation, which divides larger 
-            scenes into smaller, manageable sections, enhancing scene 
-            analysis efficiency and facilitating a deeper understanding
-            of complex environments.
+            we introduced cutscene augmentation, which augments that dataset by
+            extracting more subscenes from each big scene, improving the utility
+            of small datasets and giving the network more room to learn.
           </p>
         </div>
       </div>
@@ -550,12 +548,7 @@
 
     <div class="columns is-centered">
 
-      <div class="column has-text-centered">
-        <div class="content">
-          <div class="NeRF-video">
-            <img id="db_image" src = "data/1_1_placeholder.png" width="500">          </div>
-        </div>
-      </div>
+      
 
       <div class="column has-text-centered">
         <div class="content">
@@ -565,8 +558,7 @@
             for training our computer vision model. We utilized a high-performance 
             computing environment with a 3090Ti GPU to accelerate our training 
             process. Our training procedure involved optimizing a range of 
-            hyperparameters, including learning rates, batch sizes, and model 
-            architectures, to achieve optimal performance. We conducted training 
+            hyperparameters, including learning rates, and batch sizes, to achieve optimal performance. We conducted training 
             for a total of 200 epochs to ensure that our model converged to a 
             robust and accurate solution. This rigorous experimental setup allowed 
             us to achieve state-of-the-art results and validate the effectiveness 
@@ -670,14 +662,14 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">PSNR</h2>
-          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+          <img id="db_image" src = "data/combined_psnr.png" width="500">
         </div>
       </div>
 
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">SSIM</h2>
-          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+          <img id="db_image" src = "data/combined_ssim.png" width="500">
         </div>
       </div>
     </div>
@@ -766,14 +758,14 @@
         <div class="column has-text-centered">
           <div class="content">
             <h2 class="title is-4">PSNR</h2>
-            <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+            <img id="db_image" src = "data/combined_cutscene_psnr.png" width="500">
           </div>
         </div>
   
         <div class="column has-text-centered">
           <div class="content">
             <h2 class="title is-4">SSIM</h2>
-            <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+            <img id="db_image" src = "data/combined_cutscene_ssim.png" width="500">
           </div>
         </div>
       </div>
@@ -791,37 +783,37 @@
     </div>
     <br><br><br><br>
 
-  <div class="columns is-centered has-text-centered">
-    <div class="column">
-      <h2 class="title is-3">Planning Results</h2>
-      <p>
-        Quantitative results on View Planning
-
-      </p>
-    </div>
-  </div>
-
-  <div class="columns is-centered">
-
-    <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">PSNR </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
-          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Planning Results</h2>
+          <p>
+              To test out planning performance, we took the trained model and tested
+              planning. We start with a random set of two views, sample from all available
+              ground truth views and choose the next best view based on three different policies.
+              We report our model as "ours", the DTU pretrained model as "DTU_baseline", and the max 
+              view distance. We iterate until 6 views are collected and we measure
+              the improvement of reconstruction with each new view collected using
+              PSNR and SSIM as before.
+          </p>
         </div>
       </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">SSIM </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
-          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+            <div class="content">
+              <img id="db_image" src = "data/planning/30deg_planning.png" width="1000">
+            </div>
+            <p>
+              As shown above, measured in reconstruction quality Our method outperformes
+              the geometric and DTU trained baselines successfully extending the NeU-NBV
+              framework to large outdoor scenes.
+          </p>
         </div>
+    
       </div>
-
-  </div>
+      </div>
+      </div>
 
   </div>
 </section>
