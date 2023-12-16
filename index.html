@@ -506,22 +506,16 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
   <div class="columns is-centered has-text-centered">
-    <div class="column">
-      <h2 class="title is-3">Sensitivity Analysis Results</h2>
-      <p>
-        The sensitivity analysis we conducted affirms that our framework is
-        very sensitive to the viewing range. Having too big of a range will 
-        affect the stability of training and the network's capability to learn, while
-        having too small of a range would limit the network's novel view estimation.
-        Note that even though the reconstruction quality reduces with a bigger viewing
-        range, the uncertainty still correlates well with the error which is desirable.
-        Thus, such models can still be utilized to estimate the next best view allbeit
-        less reliably as the uncertainty predictions would be highly noisy.
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Viewing Range Sensitivity Analysis Results</h2>
+      <p>Below, we show qualitative results by fixing the reference views such that
+        they are at most 30 degrees apart and fixing the targetted novel view. We then
+        vary the model used to make the rgb and uncertainty estimation for this fixed input.
       </p>
     </div>
   </div>
 
-  <div class="columns is-centered">
+  <div class="container is-max-desktop">
 
     <div class="column has-text-centered">
         <div class="content">
@@ -535,7 +529,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">Ground Truth </h2>
-          <img id="db_image" src = "data/viewing_range_analysis/scan0_ground_truth.jpg" width="500">
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_ground_truth.jpg" width="167">
 
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
@@ -584,10 +578,135 @@
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
       </div>
-
     </div>
+    <p>
+      We further measure PSNR and SSIM as measures of reconstruction quality
+      during training. The curves show the superiority of the quality as you reduce the viewing range.
+    </p>
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">PSNR</h2>
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">SSIM</h2>
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+        </div>
+      </div>
+    </div>
+    <p>
+      The sensitivity analysis we conducted affirms that our framework is
+      very sensitive to the viewing range. Having too big of a range will 
+      affect the stability of training and the network's capability to learn, while
+      having too small of a range would limit the network's novel view estimation.
+      Note that even though the reconstruction quality reduces with a bigger viewing
+      range, the uncertainty still correlates well with the error which is desirable.
+      Thus, such models can still be utilized to estimate the next best view allbeit
+      less reliably as the uncertainty predictions would be highly noisy.
+      An interesting approach to study would be to incrementally increase the viewing
+      range during training to stabilize training while simultaneously pushing 
+      the network to expand its viewing range uncertainty estimation capabilities.
+      We leave this idea for future work.
+    </p>
   </div>
+
   <br><br><br><br>
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Cutscene Augmentation Results</h2>
+        <p>
+          For qualitative results, we conducted a more challenging analysis
+          in which we varied the view 90 degrees in the x and y direction smoothly
+          from -45,-45 to +45,+45 centered on the top bird's eye view. We then fixed
+          the input views to be [-45,-45],[-35,-35],[+35,+35],[+45,+45].
+        </p>
+      </div>
+    </div>
+  
+    <div class="container is-max-desktop">
+  
+      <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">Reference Images </h2>
+            <img id="db_image" src = "data/cutscene_animation/town_reference_images.jpg" width="500">
+  
+            <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+          </div>
+        </div>
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">Ground Truth </h2>
+            <img id="db_image" src = "data/cutscene_animation/town_ground_truth.gif" width="167">
+  
+            <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+          </div>
+        </div>
+  
+    </div>
+  
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">60deg</h2>
+            <img id="db_image" src = "data/cutscene_animation/town_60deg.gif" width="500">
+            RGB
+            <img id="db_image" src = "data/cutscene_animation/town_60deg_uncertainty.gif" width="500">
+            Uncertainty
+          </div>
+        </div>
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">60deg + Cutscene</h2>
+            <img id="db_image" src = "data/cutscene_animation/town_60deg_ca.gif" width="500">
+            RGB
+            <img id="db_image" src = "data/cutscene_animation/town_60deg_ca_uncertainty.gif" width="500">
+            Uncertainty
+          </div>
+        </div>
+  
+      </div>
+      <p>
+        We again measure PSNR and SSIM as measures of reconstruction quality
+        during training with cutscene augmentation.
+      </p>
+      <div class="columns is-centered">
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">PSNR</h2>
+            <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+          </div>
+        </div>
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">SSIM</h2>
+            <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+          </div>
+        </div>
+      </div>
+      <p>
+        The performance improvements introduced by a very simple augmentation technique 
+        such as cutscene are significant. Even though the model has never seen more than
+        60 degrees of viewing range in a single datapoint. It was able to generalize
+        to a broader viewing range (90 degrees) surpassing the baseline. The visualization 
+        further serves to show how high uncertainity can hinder the NBV planning capabilities
+        of the model. On the right side, we can trivially observe that the cutscene model's uncertainity
+        is maximized at the birds eye view [0,0] whearas on the left side for the baseline,
+        it is unclear visually which is the next best view as it suffers from high amounts of
+        noise.
+      </p>
+    </div>
+    <br><br><br><br>
 
   <div class="columns is-centered has-text-centered">
     <div class="column">
