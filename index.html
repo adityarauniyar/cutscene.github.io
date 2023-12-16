@@ -670,14 +670,14 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">PSNR</h2>
-          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+          <img id="db_image" src = "data/combined_psnr.png" width="500">
         </div>
       </div>
 
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">SSIM</h2>
-          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+          <img id="db_image" src = "data/combined_ssim.png" width="500">
         </div>
       </div>
     </div>
@@ -766,14 +766,14 @@
         <div class="column has-text-centered">
           <div class="content">
             <h2 class="title is-4">PSNR</h2>
-            <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+            <img id="db_image" src = "data/combined_cutscene_psnr.png" width="500">
           </div>
         </div>
   
         <div class="column has-text-centered">
           <div class="content">
             <h2 class="title is-4">SSIM</h2>
-            <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+            <img id="db_image" src = "data/combined_cutscene_ssim.png" width="500">
           </div>
         </div>
       </div>
@@ -791,37 +791,37 @@
     </div>
     <br><br><br><br>
 
-  <div class="columns is-centered has-text-centered">
-    <div class="column">
-      <h2 class="title is-3">Planning Results</h2>
-      <p>
-        Quantitative results on View Planning
-
-      </p>
-    </div>
-  </div>
-
-  <div class="columns is-centered">
-
-    <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">PSNR </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
-          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Planning Results</h2>
+          <p>
+              To test out planning performance, we took the trained model and tested
+              planning. We start with a random set of two views, sample from all available
+              ground truth views and choose the next best view based on three different policies.
+              We report our model as "ours", the DTU pretrained model as "DTU_baseline", and the max 
+              view distance. We iterate until 6 views are collected and we measure
+              the improvement of reconstruction with each new view collected using
+              PSNR and SSIM as before.
+          </p>
         </div>
       </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">SSIM </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
-          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+            <div class="content">
+              <img id="db_image" src = "data/planning/30deg_planning.png" width="1000">
+            </div>
+            <p>
+              As shown above, measured in reconstruction quality Our method outperformes
+              the geometric and DTU trained baselines successfully extending the NeU-NBV
+              framework to large outdoor scenes.
+          </p>
         </div>
+    
       </div>
-
-  </div>
+      </div>
+      </div>
 
   </div>
 </section>
