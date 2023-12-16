@@ -365,18 +365,36 @@
 
 
 <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <a id="interactive_demo"></a>
-        <h2 class="title is-3">Our Approach</h2>
-        <div class="content has-text-justified">
-        <p> 
-          (WIP) Describes the approach from 
-          (1) The network architechture, 
-          (2) The uncertainity estimation, 
-          (3) Uncertainity guided NBV planning.
-        </p>
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <a id="interactive_demo"></a>
+          <h2 class="title is-3">Our Approach</h2>
+          <div class="content has-text-justified">
+          <p> 
+            Our approach is based on the Next Best View Planning Using Uncertainty Estimation
+            in Image-Based Neural Rendering (NeU-NBV) work by Jin which had been built
+            on top of the pixelnerf framework. The NeU-NBV framework adapts pixel nerf
+            to next best view planning using two techniques: 1. It enhances the speed of 
+            volumetric rendering through using an LSTM to predict the jumping distance 
+            in ray tracing. 2. It incorporates uncertainity estimation by pushing the network
+            to output both a mean RGB value and a variance. The uncertainty and final RGB values
+            are then extracted by sampling from the log normal distribution 100 times and taking
+            the mean and variance of those samples.
+            <br/>
+            Furthermore, the (NeU-NBV) work adds a planning framework on top of their
+            adapted pixelnerf model as follows: Given two starting reference views,
+            they sample multiple candidate views within a limited viewing range.
+            They then feed all of those candidate views through the trained network which
+            in turn outputs both an RGB and uncertainty prediction for each pixel. The next
+            best view is then chosen such that it maximizes the information gain by targeting
+            the novel view with the highest average pixel uncertainity. The novel view is then 
+            collected and the process is then repeated until the capture budget has been expended.
+            <br/>
+            
+          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -386,7 +404,7 @@
 
   <div class="column has-text-centered">
     <div class="content">
-      <h2 class="title is-4">Network architechture</h2>
+      <h2 class="title is-4">Uncertainty prediction network architechture</h2>
       <img id="db_image" src = "data/method_viz/network_architechture.png" width="500">
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
     </div>
@@ -394,7 +412,7 @@
 
   <div class="column has-text-centered">
     <div class="content">
-      <h2 class="title is-4">Uncertainity Estimation</h2>
+      <h2 class="title is-4">Uncertainity estimation loss function</h2>
       <img id="db_image" src = "data/method_viz/loss_function.png" width="500">
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
     </div>
@@ -402,7 +420,7 @@
 
   <div class="column has-text-centered">
     <div class="content">
-      <h2 class="title is-4">NBV planning</h2>
+      <h2 class="title is-4">NBV planning Architechture</h2>
       <img id="db_image" src = "data/planning/nbv_planning_arc.png" width="500">
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
     </div>
@@ -422,10 +440,21 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
         <p> 
-          Describes the 
-          (1) 30/60/90 without cutscene and with 60-deg cutscene method of training. 
-          (2) Uncertainity calculation on uniform sampling and selection for NBV planning.
-          One sentence each.
+        Challenges arise when applying DTU pre-trained models for novel view 
+        prediction on larger outdoor navigational scenes, which it wasn't 
+        originally trained on. To address this, we embarked on an experimentation 
+        journey to develop a robust training strategy. We employed the 
+        UrbanScene3D environment, imported its .obj representation into 
+        Blender, and scripted a custom dataset generation process aligned 
+        with DTU's configuration. We also conducted a comprehensive 
+        sensitivity analysis to explore various viewing angles, adjusting 
+        scene parameters, such as varying radii for different configurations 
+        and introducing a range of maximum view angle changes. However, 
+        the complexity of larger scenes necessitates a more effective 
+        training strategy, prompting us to delve into innovative techniques 
+        like cutscene augmentation. This method involves dividing extensive 
+        scenes into manageable chunks, enhancing scene analysis and 
+        understanding for improved model performance.
         </p>
         </div>
       </div>

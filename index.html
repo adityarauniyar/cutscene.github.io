@@ -392,14 +392,7 @@
             the novel view with the highest average pixel uncertainity. The novel view is then 
             collected and the process is then repeated until the capture budget has been expended.
             <br/>
-            For our project, we attempt to build on top of the (NeU-NBV) framework
-            and extend it to large outdoor scenes. The research questions that we will explore
-            are:
-            <ul>
-              <li>What are the factors that such neural uncertainty depend on?</li>
-              <li>Can such approach generalize to outdoor scenes? How ?</li>
-              <li>How does planning using such uncertainty boost reconstruction quality?</li>
-            </ul>
+            
           </p>
           </div>
         </div>
@@ -411,7 +404,7 @@
 
   <div class="column has-text-centered">
     <div class="content">
-      <h2 class="title is-4">Network architechture</h2>
+      <h2 class="title is-4">Uncertainty prediction network architechture</h2>
       <img id="db_image" src = "data/method_viz/network_architechture.png" width="500">
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
     </div>
@@ -419,7 +412,7 @@
 
   <div class="column has-text-centered">
     <div class="content">
-      <h2 class="title is-4">Uncertainity Estimation</h2>
+      <h2 class="title is-4">Uncertainity estimation loss function</h2>
       <img id="db_image" src = "data/method_viz/loss_function.png" width="500">
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
     </div>
@@ -427,7 +420,7 @@
 
   <div class="column has-text-centered">
     <div class="content">
-      <h2 class="title is-4">NBV planning</h2>
+      <h2 class="title is-4">NBV planning architechture</h2>
       <img id="db_image" src = "data/planning/nbv_planning_arc.png" width="500">
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
     </div>
@@ -447,10 +440,21 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
         <p> 
-          Describes the 
-          (1) 30/60/90 without cutscene and with 60-deg cutscene method of training. 
-          (2) Uncertainity calculation on uniform sampling and selection for NBV planning.
-          One sentence each.
+        Challenges arise when applying DTU pre-trained models for novel view 
+        prediction on larger outdoor navigational scenes, which it wasn't 
+        originally trained on. To address this, we embarked on an experimentation 
+        journey to develop a robust training strategy. We employed the 
+        UrbanScene3D environment, imported its .obj representation into 
+        Blender, and scripted a custom dataset generation process aligned 
+        with DTU's configuration. We also conducted a comprehensive 
+        sensitivity analysis to explore various viewing angles, adjusting 
+        scene parameters, such as varying radii for different configurations 
+        and introducing a range of maximum view angle changes. However, 
+        the complexity of larger scenes necessitates a more effective 
+        training strategy, prompting us to delve into innovative techniques 
+        like cutscene augmentation. This method involves dividing extensive 
+        scenes into manageable chunks, enhancing scene analysis and 
+        understanding for improved model performance.
         </p>
         </div>
       </div>
