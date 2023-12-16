@@ -507,10 +507,16 @@
   <div class="hero-body">
   <div class="columns is-centered has-text-centered">
     <div class="column">
-      <h2 class="title is-3">Results</h2>
+      <h2 class="title is-3">Sensitivity Analysis Results</h2>
       <p>
-        Qualitative results on RGB and uncertainity prediction
-
+        The sensitivity analysis we conducted affirms that our framework is
+        very sensitive to the viewing range. Having too big of a range will 
+        affect the stability of training and the network's capability to learn, while
+        having too small of a range would limit the network's novel view estimation.
+        Note that even though the reconstruction quality reduces with a bigger viewing
+        range, the uncertainty still correlates well with the error which is desirable.
+        Thus, such models can still be utilized to estimate the next best view allbeit
+        less reliably as the uncertainty predictions would be highly noisy.
       </p>
     </div>
   </div>
@@ -520,7 +526,7 @@
     <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">Reference Images </h2>
-          <img id="db_image" src = "data/16_9_placeholder.png" width="500">
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_reference_images.jpg" width="500">
 
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
@@ -529,7 +535,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">Ground Truth </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_ground_truth.jpg" width="500">
 
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
@@ -543,8 +549,12 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">90deg </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+          RGB
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_uncertainty_53.jpg" width="500">
+          Uncertainty
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_error_53.jpg" width="500">
+          Error
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
       </div>
@@ -552,8 +562,12 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">60deg </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+          RGB
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_uncertainty_53.jpg" width="500">
+          Uncertainty
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_error_53.jpg" width="500">
+          Error
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
       </div>
@@ -561,17 +575,12 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">30deg</h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
-          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-        </div>
-      </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">60deg CA</h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_30_rgb_53.jpg" width="500">
+          RGB
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_30_uncertainty_53.jpg" width="500">
+          Uncertainty
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_30_error_53.jpg" width="500">
+          Error
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
       </div>
