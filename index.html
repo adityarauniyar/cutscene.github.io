@@ -538,11 +538,15 @@
           <h2 class="title is-4"></h2>
           <div class="content has-text-justified">
             <p>
-              The cutscene augmentation method involves dividing larger scenes into smaller,
-              manageable chunks, often isolating individual buildings or areas without 
-              extraneous elements such as trees and outdoor obstacles. This approach 
-              enhances the efficiency of scene analysis and processing, facilitating 
-              understanding of complex environments.
+              Taking inspiration from simple yet effective 2D augmentation methods
+              such as cutout and cutmix, and stemming from the observations that
+              large scale outdoor scenes are scarce and such scenes are often comprised
+              of many smaller subscenes, we introduce cutscene augmentation. 
+              The cutscene augmentation method increases the variation of the data
+              by cutting out semantically divisible subscenes out of a larger scene.
+              Those cutout scenes are scaled up and added as different data points
+              pushing the network to generalize and avoid overfitting when data
+              is scarce as it often is for large outdoor scenes. 
             </p>
             </div>
         </div>
