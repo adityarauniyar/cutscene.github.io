@@ -55,7 +55,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://cutscene.github.io/">
+      <a class="navbar-item" href="https://adityarauniyar.com/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -156,9 +156,9 @@
             outdoor scenes into smaller components. Our model is then trained 
             to predict uncertainty and RGB values for novel poses within these 
             segmented scenes. This cutscene augmentation method serves a dual 
-            purpose. First, it effectively reduces the size of the dataset by 
+            purpose. First, it effectively increases the size of the dataset by 
             a significant percentage, enhancing the efficiency of the training 
-            process. Second, and more importantly, it substantially increases 
+            process, and not overfitting on a scene. Second, and more importantly, it substantially increases 
             the accuracy of novel view predictions. By leveraging this method, 
             our project aims to overcome challenges associated with data 
             collection in large-scale outdoor scenarios, providing a valuable 
@@ -198,17 +198,19 @@
         <h2 class="title is-3">Introduction and Related work</h2>
         <div class="content has-text-justified">
         <p> 
-          (WIP) Embodied robotic intelligence relies on active perception 
-          and exploration, essential for various applications like 
-          robotic manipulation, inspection, and vision-based navigation. 
-          The autonomous collection of data plays a pivotal role in 
-          scene understanding and subsequent tasks [1]. However, a 
-          significant challenge lies in efficiently planning a sequence 
-          of views for sensors, ensuring the acquisition of the most 
-          valuable information while adhering to platform-specific 
-          constraints [2]. Addressing this challenge is crucial for 
-          enhancing the training process, particularly in scenarios 
-          involving larger scenes.
+          
+        Embodied robotic intelligence relies on active perception and 
+        exploration, essential for various applications like robotic 
+        manipulation, inspection, and vision-based navigation. 
+        The autonomous collection of data plays a pivotal role in scene 
+        understanding and subsequent tasks, with a focus on novel view 
+        synthesis using multiple UAVs to make the process more robust [1]. 
+        However, a significant challenge lies in efficiently planning a 
+        sequence of views for sensors, ensuring the acquisition of the 
+        most valuable information while adhering to platform-specific 
+        constraints and enhancing scene understanding for manipulation 
+        tasks [2]. Addressing this challenge is crucial for enhancing the 
+        training process, particularly in scenarios involving larger scenes.
         </p>
         </div>
       </div>
@@ -249,7 +251,19 @@
         <h2 class="title is-3">Contributions</h2>
         <div class="content has-text-justified">
         <p> 
-          (WIP) Describes the three contributions. One sentence each.
+          In our research, we explored 3D scene understanding, 
+          focusing on larger outdoor environments represented by 
+          UrbanScene3D. We integrated this environment into Blender, 
+          generating datasets emulating camera poses and renders 
+          akin to the DTU dataset. Our sensitivity analysis 
+          involved various viewing angles, creating datasets 
+          with different parameters, including a double dome 
+          configuration and maximum view angle changes aligned with 
+          specified view ranges of 30, 60, and 90 degrees. Additionally, 
+          we introduced cutscene augmentation, which divides larger 
+          scenes into smaller, manageable sections, enhancing scene 
+          analysis efficiency and facilitating a deeper understanding
+          of complex environments.
         </p>
         </div>
       </div>
@@ -261,26 +275,31 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">Training on larger outdoor scenes</h2>
+      <img id="db_image" src = "data/method_viz/View capture_180_renders.gif" width="500">
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+      
+    </div>
+  </div>
+
+  <div class="column has-text-centered">
+    <div class="content">
+      <h2 class="title is-4">Viewing range sensitivity analysis</h2>
       <img id="db_image" src = "data/method_viz/Selection_180_90_30.gif" width="500">
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+      
     </div>
   </div>
 
   <div class="column has-text-centered">
     <div class="content">
-      <h2 class="title is-4">Hierarchical training strategy</h2>
+      <h2 class="title is-4">Cutscene Augmentation</h2>
       <img id="db_image" src = "data/method_viz/cutscene.gif" width="500">
       <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+      
     </div>
   </div>
 
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">View planning to gather NBV</h2>
-      <img id="db_image" src = "data/method_viz/view_capture_180.gif" width="500">
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
+  
   </div>
 
   </div>
@@ -296,7 +315,24 @@
         <h2 class="title is-3">Background</h2>
         <div class="content has-text-justified">
         <p> 
-          (WIP) Describes the two major backgrounds on NeRF and PixelNeRF. One sentence each.
+          "NeRF" (Neural Radiance Fields) is a pioneering research paper 
+          in computer vision that presents a revolutionary method for 3D 
+          scene reconstruction and novel view synthesis. This approach 
+          employs neural networks to model volumetric scenes from 2D images, 
+          enabling the creation of immersive 3D environments and realistic 
+          rendering of novel viewpoints. NeRF has had a profound impact 
+          on various fields, including computer graphics, virtual reality, 
+          and robotics.
+          <br>
+          "PixelNeRF" is an extension and refinement of the NeRF framework, 
+          focusing on achieving high-quality view synthesis at the pixel 
+          level. Building upon the foundations laid by NeRF, PixelNeRF 
+          introduces additional neural networks and techniques to enhance 
+          the visual fidelity of synthesized images and improve scene 
+          understanding. This advancement further solidifies the potential 
+          of NeRF-based methods for tasks such as image synthesis, view 
+          interpolation, and scene reconstruction, making them valuable 
+          tools in computer vision and related domains.
         </p>
         </div>
       </div>
@@ -407,8 +443,9 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">Training on larger outdoor scenes</h2>
-          <img id="db_image" src = "data/method_viz/Selection_180_90_30.gif" width="500">
+          <img id="db_image" src = "data/method_viz/View capture_180_renders.gif" width="500">
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+          
         </div>
       </div>
 
@@ -416,16 +453,53 @@
         <div class="content">
           <h2 class="title is-4"></h2>
           <div class="content has-text-justified">
-            <p> 
-              (WIP) Describes the 
-              (1) 30/60/90 without cutscene method of training.
+            <p>
+              For our research, we employed a larger outdoor navigational environment 
+              known as UrbanScene3D. To facilitate our experiments, we imported the .obj 
+              file representing this environment into Blender. Subsequently, we set up a
+              custom script within Blender to generate a dataset. This dataset was designed 
+              to emulate camera poses and renders configured similarly to the DTU dataset,
+              enabling us to conduct our experiments effectively and gather valuable 
+              insights from this rich outdoor environment.
             </p>
             </div>
         </div>
       </div>
 
-      <script src = "data/trajectory_data/hawkins.js"></script>
-      <script src = "demo/plot.js"></script>
+  
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Setting Viewing ranges</h2>
+          <img id="db_image" src = "data/method_viz/Selection_180_90_30.gif" width="500">
+          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+          
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4"></h2>
+          <div class="content has-text-justified">
+            <p>
+              Utilizing the scene file within Blender, we conducted a comprehensive 
+              sensitivity analysis to explore various viewing angles. This approach 
+              allowed us to generate multiple datasets by manipulating the scene 
+              parameters. Specifically, we created a double dome setup within the scene,
+              varying the radii for two different configurations. Moreover, we 
+              introduced a range of maximum view angle changes for each dataset, 
+              aligning the maximum change with the specified view range. This rigorous 
+              analysis encompassed view ranges of 30 degrees, 60 degrees, and 90 degrees, 
+              providing us with valuable datasets that capture a wide array of 
+              perspectives and visual information for our research.
+            </p>
+            </div>
+        </div>
+      </div>
+
   
     </div>
 
@@ -443,16 +517,17 @@
         <div class="content">
           <h2 class="title is-4"></h2>
           <div class="content has-text-justified">
-            <p> 
-              (WIP) Describes the 
-              (1) 60-deg cutscene method of training.
+            <p>
+              The cutscene augmentation method involves dividing larger scenes into smaller,
+              manageable chunks, often isolating individual buildings or areas without 
+              extraneous elements such as trees and outdoor obstacles. This approach 
+              enhances the efficiency of scene analysis and processing, facilitating 
+              understanding of complex environments.
             </p>
             </div>
         </div>
       </div>
 
-      <script src = "data/trajectory_data/hawkins.js"></script>
-      <script src = "demo/plot.js"></script>
   
     </div>
 
@@ -486,8 +561,17 @@
         <div class="content">
           <div class="content has-text-justified">
             <p> 
-              (WIP) Describes the experimental setup of the model training 
-              and planning of views using the model
+              
+            In our experimental setup, we employed a state-of-the-art approach 
+            for training our computer vision model. We utilized a high-performance 
+            computing environment with a 3090Ti GPU to accelerate our training 
+            process. Our training procedure involved optimizing a range of 
+            hyperparameters, including learning rates, batch sizes, and model 
+            architectures, to achieve optimal performance. We conducted training 
+            for a total of 200 epochs to ensure that our model converged to a 
+            robust and accurate solution. This rigorous experimental setup allowed 
+            us to achieve state-of-the-art results and validate the effectiveness 
+            of our proposed approach.
             </p>
             </div>
         </div>
@@ -506,21 +590,21 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
   <div class="columns is-centered has-text-centered">
-    <div class="column">
-      <h2 class="title is-3">Results</h2>
-      <p>
-        Qualitative results on RGB and uncertainity prediction
-
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Viewing Range Sensitivity Analysis Results</h2>
+      <p>Below, we show qualitative results by fixing the reference views such that
+        they are at most 30 degrees apart and fixing the targetted novel view. We then
+        vary the model used to make the rgb and uncertainty estimation for this fixed input.
       </p>
     </div>
   </div>
 
-  <div class="columns is-centered">
+  <div class="container is-max-desktop">
 
     <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">Reference Images </h2>
-          <img id="db_image" src = "data/16_9_placeholder.png" width="500">
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_reference_images.jpg" width="500">
 
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
@@ -529,7 +613,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">Ground Truth </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_ground_truth.jpg" width="167">
 
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
@@ -543,8 +627,12 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">90deg </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+          RGB
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_uncertainty_53.jpg" width="500">
+          Uncertainty
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_error_53.jpg" width="500">
+          Error
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
       </div>
@@ -552,8 +640,12 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">60deg </h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+          RGB
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_uncertainty_53.jpg" width="500">
+          Uncertainty
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_error_53.jpg" width="500">
+          Error
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
       </div>
@@ -561,24 +653,144 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">30deg</h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_30_rgb_53.jpg" width="500">
+          RGB
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_30_uncertainty_53.jpg" width="500">
+          Uncertainty
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_30_error_53.jpg" width="500">
+          Error
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+        </div>
+      </div>
+    </div>
+    <p>
+      We further measure PSNR and SSIM as measures of reconstruction quality
+      during training. The curves show the superiority of the quality as you reduce the viewing range.
+    </p>
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">PSNR</h2>
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
         </div>
       </div>
 
       <div class="column has-text-centered">
         <div class="content">
-          <h2 class="title is-4">60deg CA</h2>
-          <img id="db_image" src = "data/1_1_placeholder.png" width="500">
-
-          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+          <h2 class="title is-4">SSIM</h2>
+          <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
         </div>
       </div>
-
     </div>
+    <p>
+      The sensitivity analysis we conducted affirms that our framework is
+      very sensitive to the viewing range. Having too big of a range will 
+      affect the stability of training and the network's capability to learn, while
+      having too small of a range would limit the network's novel view estimation.
+      Note that even though the reconstruction quality reduces with a bigger viewing
+      range, the uncertainty still correlates well with the error which is desirable.
+      Thus, such models can still be utilized to estimate the next best view allbeit
+      less reliably as the uncertainty predictions would be highly noisy.
+      An interesting approach to study would be to incrementally increase the viewing
+      range during training to stabilize training while simultaneously pushing 
+      the network to expand its viewing range uncertainty estimation capabilities.
+      We leave this idea for future work.
+    </p>
   </div>
+
   <br><br><br><br>
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Cutscene Augmentation Results</h2>
+        <p>
+          For qualitative results, we conducted a more challenging analysis
+          in which we varied the view 90 degrees in the x and y direction smoothly
+          from -45,-45 to +45,+45 centered on the top bird's eye view. We then fixed
+          the input views to be [-45,-45],[-35,-35],[+35,+35],[+45,+45].
+        </p>
+      </div>
+    </div>
+  
+    <div class="container is-max-desktop">
+  
+      <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">Reference Images </h2>
+            <img id="db_image" src = "data/cutscene_animation/town_reference_images.jpg" width="500">
+  
+            <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+          </div>
+        </div>
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">Ground Truth </h2>
+            <img id="db_image" src = "data/cutscene_animation/town_ground_truth.gif" width="167">
+  
+            <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+          </div>
+        </div>
+  
+    </div>
+  
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">60deg</h2>
+            <img id="db_image" src = "data/cutscene_animation/town_60deg.gif" width="500">
+            RGB
+            <img id="db_image" src = "data/cutscene_animation/town_60deg_uncertainty.gif" width="500">
+            Uncertainty
+          </div>
+        </div>
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">60deg + Cutscene</h2>
+            <img id="db_image" src = "data/cutscene_animation/town_60deg_ca.gif" width="500">
+            RGB
+            <img id="db_image" src = "data/cutscene_animation/town_60deg_ca_uncertainty.gif" width="500">
+            Uncertainty
+          </div>
+        </div>
+  
+      </div>
+      <p>
+        We again measure PSNR and SSIM as measures of reconstruction quality
+        during training with cutscene augmentation.
+      </p>
+      <div class="columns is-centered">
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">PSNR</h2>
+            <img id="db_image" src = "data/viewing_range_analysis/scan0_best_90_rgb_53.jpg" width="500">
+          </div>
+        </div>
+  
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="title is-4">SSIM</h2>
+            <img id="db_image" src = "data/viewing_range_analysis/scan0_best_60_rgb_53.jpg" width="500">
+          </div>
+        </div>
+      </div>
+      <p>
+        The performance improvements introduced by a very simple augmentation technique 
+        such as cutscene are significant. Even though the model has never seen more than
+        60 degrees of viewing range in a single datapoint. It was able to generalize
+        to a broader viewing range (90 degrees) surpassing the baseline. The visualization 
+        further serves to show how high uncertainity can hinder the NBV planning capabilities
+        of the model. On the right side, we can trivially observe that the cutscene model's uncertainity
+        is maximized at the birds eye view [0,0] whearas on the left side for the baseline,
+        it is unclear visually which is the next best view as it suffers from high amounts of
+        noise.
+      </p>
+    </div>
+    <br><br><br><br>
 
   <div class="columns is-centered has-text-centered">
     <div class="column">
@@ -621,7 +833,22 @@
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3">Conclusion and Future Work</h2>
-        <p></p>
+        <p>To conclude, in this work we have explored the application of NeU-NBV planning to
+          large outdoor scenes. We conducted an evaluation on the sensitivity of the approach
+          to viewing angle range and showed that the method is highly sensitive. We further introduced
+          and evaluated a novel augmentation technique "cutscene". We demonstrated how cutscene
+          can significantly enhance the performance on outdoor large scenes. 
+
+          In the future, we plan to further expand on the idea of cutscene possibly
+          automating the approach of semanticly dividing the scene into multiple subcenes 
+          by utilizing a 2D birds eye view building/POI detector or perhaps using
+          geometric clustering clustering the floor vertices and exposing buildings. 
+          Another interesting direction would be to add on to this augmentation technique by
+          rearranging the cutout scenes into novel configurations pushing the 
+          variety of the scarce scene data we have even further. Furthermore,
+          our viewing range sensitivity analysis hints at the possiblity that the
+          network could benefit from a scheduled viewing range in which we increase
+          the range gradually as the network learns.</p>
       </div>
     </div>
     
@@ -629,7 +856,6 @@
       <div class="column has-text-centered">
         <div class="content">
           <p>
-            (WIP) Concludes the project work and introduces future work.
           </p>
         </div>
       </div>
@@ -652,6 +878,7 @@
       @article{2023cutscene,
         title={Cutscene: Active vision for Next Best View Planning in outdoor scenes},
         author={Rauniyar, Aditya and Alama, Omar and Hou, Yuechuan and Ganwal, Mukul},
+        url = {https://adityarauniyar.com/cutscene.github.io/}
         year={2023}
       }
     </code></pre>
