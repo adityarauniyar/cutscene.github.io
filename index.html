@@ -365,18 +365,43 @@
 
 
 <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <a id="interactive_demo"></a>
-        <h2 class="title is-3">Our Approach</h2>
-        <div class="content has-text-justified">
-        <p> 
-          (WIP) Describes the approach from 
-          (1) The network architechture, 
-          (2) The uncertainity estimation, 
-          (3) Uncertainity guided NBV planning.
-        </p>
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <a id="interactive_demo"></a>
+          <h2 class="title is-3">Our Approach</h2>
+          <div class="content has-text-justified">
+          <p> 
+            Our approach is based on the Next Best View Planning Using Uncertainty Estimation
+            in Image-Based Neural Rendering (NeU-NBV) work by Jin which had been built
+            on top of the pixelnerf framework. The NeU-NBV framework adapts pixel nerf
+            to next best view planning using two techniques: 1. It enhances the speed of 
+            volumetric rendering through using an LSTM to predict the jumping distance 
+            in ray tracing. 2. It incorporates uncertainity estimation by pushing the network
+            to output both a mean RGB value and a variance. The uncertainty and final RGB values
+            are then extracted by sampling from the log normal distribution 100 times and taking
+            the mean and variance of those samples.
+            <br/>
+            Furthermore, the (NeU-NBV) work adds a planning framework on top of their
+            adapted pixelnerf model as follows: Given two starting reference views,
+            they sample multiple candidate views within a limited viewing range.
+            They then feed all of those candidate views through the trained network which
+            in turn outputs both an RGB and uncertainty prediction for each pixel. The next
+            best view is then chosen such that it maximizes the information gain by targeting
+            the novel view with the highest average pixel uncertainity. The novel view is then 
+            collected and the process is then repeated until the capture budget has been expended.
+            <br/>
+            For our project, we attempt to build on top of the (NeU-NBV) framework
+            and extend it to large outdoor scenes. The research questions that we will explore
+            are:
+            <ul>
+              <li>What are the factors that such neural uncertainty depend on?</li>
+              <li>Can such approach generalize to outdoor scenes? How ?</li>
+              <li>How does planning using such uncertainty boost reconstruction quality?</li>
+            </ul>
+          </p>
+          </div>
         </div>
       </div>
     </div>
